@@ -75,6 +75,23 @@ final class TraineViewController: UIViewController {
         
         return button
     }()
+    private lazy var attemptLable: UILabel = {
+        let label = UILabel()
+        
+        label.text = "\(attempt)/\(dataSource.count)"
+        label.font = .boldSystemFont(ofSize: 30)
+        
+        return label
+    }()
+    private lazy var scoreLabel: UILabel = {
+       let label = UILabel()
+        
+        label.text = "Score: \(score)"
+        label.textColor = .systemRed
+        label.font = .boldSystemFont(ofSize: 30)
+        
+        return label
+    }()
     
     //MARK: - Properties
     
@@ -90,7 +107,18 @@ final class TraineViewController: UIViewController {
             pastTextField.text = ""
             participleTextField.text = ""
         }
-    }//
+    }
+    private var attempt = 1 {
+        didSet {
+            attemptLable.text = "\(attempt)/\(dataSource.count)"
+            pastTextField.becomeFirstResponder()
+        }
+    }
+    private var score = 0 {
+        didSet {
+            scoreLabel.text = "Score: \(score)"
+        }
+    }
     
     //MARK: - LifeCycle
     override func viewDidLoad() {
@@ -115,6 +143,8 @@ final class TraineViewController: UIViewController {
     @objc private func checkAction() {
         if checkAnswer() {
             count += 1
+            attempt += 1
+            score += 1
         } else {
             checkButton.backgroundColor = .red
             checkButton.setTitle("Try againe", for: .normal)
@@ -130,7 +160,7 @@ final class TraineViewController: UIViewController {
         
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
-        contentView.addSubviews(views: [infinitiveLabel, pastSimpleLabel, participleLabel, pastTextField, participleTextField, checkButton])
+        contentView.addSubviews(views: [infinitiveLabel, attemptLable, scoreLabel, pastSimpleLabel, participleLabel, pastTextField, participleTextField, checkButton])
         
         setupConstraints()
     }
@@ -140,6 +170,12 @@ final class TraineViewController: UIViewController {
         }
         contentView.snp.makeConstraints { make in
             make.size.edges.equalToSuperview() //размер всех сторон равен супервью (scroll view)
+        }
+        attemptLable.snp.makeConstraints { make in
+            make.top.trailing.equalToSuperview().inset(20)
+        }
+        scoreLabel.snp.makeConstraints { make in
+            make.top.leading.equalToSuperview().inset(20)
         }
         infinitiveLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(130)
