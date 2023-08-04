@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5555A89F2A767E2F00687357 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555A89E2A767E2F00687357 /* TableViewCell.swift */; };
+		5555A8A12A76862700687357 /* UIView + Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555A8A02A76862700687357 /* UIView + Ex.swift */; };
+		5555A8A32A780C0100687357 /* UIStackView + Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555A8A22A780C0000687357 /* UIStackView + Ex.swift */; };
+		5555A8AD2A7815F800687357 /* Verb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555A8AB2A7815F800687357 /* Verb.swift */; };
+		5555A8AE2A7815F800687357 /* IrregularVerbs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555A8AC2A7815F800687357 /* IrregularVerbs.swift */; };
+		5555A8B42A79907800687357 /* TestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5555A8B32A79907800687357 /* TestController.swift */; };
 		5576129B2A72CE3400DB1510 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5576129A2A72CE3400DB1510 /* AppDelegate.swift */; };
 		5576129F2A72CE3400DB1510 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5576129E2A72CE3400DB1510 /* HomeViewController.swift */; };
 		557612A42A72CE3600DB1510 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 557612A32A72CE3600DB1510 /* Assets.xcassets */; };
@@ -17,7 +23,7 @@
 		557612CB2A75521B00DB1510 /* String+ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557612CA2A75521B00DB1510 /* String+ex.swift */; };
 		557612D12A75533A00DB1510 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 557612D32A75533A00DB1510 /* Localizable.strings */; };
 		557612D62A755D5F00DB1510 /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557612D52A755D5F00DB1510 /* SelectViewController.swift */; };
-		557612D92A755DA600DB1510 /* Traine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557612D82A755DA600DB1510 /* Traine.swift */; };
+		557612D92A755DA600DB1510 /* TraineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557612D82A755DA600DB1510 /* TraineViewController.swift */; };
 		557612E02A7657B700DB1510 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 557612DF2A7657B700DB1510 /* SnapKit */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +45,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5555A89E2A767E2F00687357 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		5555A8A02A76862700687357 /* UIView + Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Ex.swift"; sourceTree = "<group>"; };
+		5555A8A22A780C0000687357 /* UIStackView + Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Ex.swift"; sourceTree = "<group>"; };
+		5555A8AB2A7815F800687357 /* Verb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Verb.swift; sourceTree = "<group>"; };
+		5555A8AC2A7815F800687357 /* IrregularVerbs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IrregularVerbs.swift; sourceTree = "<group>"; };
+		5555A8B32A79907800687357 /* TestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestController.swift; sourceTree = "<group>"; };
 		557612972A72CE3400DB1510 /* VerbRegularApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VerbRegularApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5576129A2A72CE3400DB1510 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5576129E2A72CE3400DB1510 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -54,7 +66,7 @@
 		557612D22A75533A00DB1510 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		557612D42A75535D00DB1510 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		557612D52A755D5F00DB1510 /* SelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
-		557612D82A755DA600DB1510 /* Traine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Traine.swift; sourceTree = "<group>"; };
+		557612D82A755DA600DB1510 /* TraineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraineViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +95,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5555A8A42A78115E00687357 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5555A89E2A767E2F00687357 /* TableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5555A8A52A78116800687357 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				557612D52A755D5F00DB1510 /* SelectViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5555A8AA2A7815DC00687357 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5555A8AC2A7815F800687357 /* IrregularVerbs.swift */,
+				5555A8AB2A7815F800687357 /* Verb.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5555A8B12A79904900687357 /* TestScreen */ = {
+			isa = PBXGroup;
+			children = (
+				5555A8B22A79905D00687357 /* TestController */,
+			);
+			path = TestScreen;
+			sourceTree = "<group>";
+		};
+		5555A8B22A79905D00687357 /* TestController */ = {
+			isa = PBXGroup;
+			children = (
+				5555A8B32A79907800687357 /* TestController.swift */,
+			);
+			path = TestController;
+			sourceTree = "<group>";
+		};
 		5576128E2A72CE3400DB1510 = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				5576129A2A72CE3400DB1510 /* AppDelegate.swift */,
+				5555A8B12A79904900687357 /* TestScreen */,
 				557612CE2A75526000DB1510 /* Home */,
 				557612DA2A755DB400DB1510 /* Traine */,
 				557612D72A755D8400DB1510 /* Select */,
@@ -139,6 +193,8 @@
 			isa = PBXGroup;
 			children = (
 				557612CA2A75521B00DB1510 /* String+ex.swift */,
+				5555A8A02A76862700687357 /* UIView + Ex.swift */,
+				5555A8A22A780C0000687357 /* UIStackView + Ex.swift */,
 				557612D32A75533A00DB1510 /* Localizable.strings */,
 			);
 			path = Extentions;
@@ -163,7 +219,9 @@
 		557612D72A755D8400DB1510 /* Select */ = {
 			isa = PBXGroup;
 			children = (
-				557612D52A755D5F00DB1510 /* SelectViewController.swift */,
+				5555A8AA2A7815DC00687357 /* Model */,
+				5555A8A52A78116800687357 /* Controller */,
+				5555A8A42A78115E00687357 /* View */,
 			);
 			path = Select;
 			sourceTree = "<group>";
@@ -171,7 +229,7 @@
 		557612DA2A755DB400DB1510 /* Traine */ = {
 			isa = PBXGroup;
 			children = (
-				557612D82A755DA600DB1510 /* Traine.swift */,
+				557612D82A755DA600DB1510 /* TraineViewController.swift */,
 			);
 			path = Traine;
 			sourceTree = "<group>";
@@ -314,11 +372,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5555A8A32A780C0100687357 /* UIStackView + Ex.swift in Sources */,
 				557612D62A755D5F00DB1510 /* SelectViewController.swift in Sources */,
+				5555A8AE2A7815F800687357 /* IrregularVerbs.swift in Sources */,
+				5555A8B42A79907800687357 /* TestController.swift in Sources */,
 				5576129F2A72CE3400DB1510 /* HomeViewController.swift in Sources */,
 				557612CB2A75521B00DB1510 /* String+ex.swift in Sources */,
+				5555A89F2A767E2F00687357 /* TableViewCell.swift in Sources */,
 				5576129B2A72CE3400DB1510 /* AppDelegate.swift in Sources */,
-				557612D92A755DA600DB1510 /* Traine.swift in Sources */,
+				557612D92A755DA600DB1510 /* TraineViewController.swift in Sources */,
+				5555A8A12A76862700687357 /* UIView + Ex.swift in Sources */,
+				5555A8AD2A7815F800687357 /* Verb.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
