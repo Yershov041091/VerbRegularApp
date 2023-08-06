@@ -92,6 +92,17 @@ final class TraineViewController: UIViewController {
         
         return label
     }()
+    private lazy var skipButton: UIButton = {
+       let button = UIButton()
+        
+        button.setTitle("Skip", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.layer.cornerRadius = 10
+        button.backgroundColor = .systemGreen
+        button.addTarget(self, action: #selector(skipAction), for: .touchUpInside)
+        
+        return button
+    }()
     
     //MARK: - Properties
     
@@ -140,6 +151,27 @@ final class TraineViewController: UIViewController {
         unregisterForKeyboardNotification()
     }
     //MARK: - Private methods
+    @objc private func skipAction() {
+        let allert = UIAlertController(title: "Try to remember:", message: "First form: \(currnetVerb?.pastSimple ?? "") \n Third form: \(currnetVerb?.participle ?? "")", preferredStyle: .alert)
+        let tryAgaineAction = UIAlertAction(title: "Try againe", style: .default) { _ in
+            self.pastTextField.text = ""
+            self.participleTextField.text = ""
+            self.pastTextField.becomeFirstResponder()
+            self.checkButton.backgroundColor = .systemGray5
+            self.checkButton.setTitle("Check", for: .normal)
+        }
+        let laterAction = UIAlertAction(title: "Later", style: .destructive){ _ in
+            self.count += 1
+            self.attempt += 1
+            self.checkButton.backgroundColor = .systemGray5
+            self.checkButton.setTitle("Check", for: .normal)
+            self.firstAlert(attempt: self.attempt)
+        }
+        allert.addAction(tryAgaineAction)
+        allert.addAction(laterAction)
+        present(allert, animated: true)
+    }
+    
     @objc private func checkAction() {
         if checkAnswer() {
             count += 1
@@ -148,20 +180,25 @@ final class TraineViewController: UIViewController {
             checkButton.backgroundColor = .systemGray5
             checkButton.setTitle("Check", for: .normal)
             
-            if attempt == dataSource.count + 1 {
-                self.attempt -= 1
-                let allert = UIAlertController(title: "You've finished!", message: "Your score: \(score)", preferredStyle: .alert)
-                let action = UIAlertAction(title: "Try againe", style: .default) { _ in
-                    self.navigationController?.popViewController(animated: true)
-                }
-                allert.addAction(action)
-                present(allert, animated: true)
-            }
+            firstAlert(attempt: attempt)
         } else {
             checkButton.backgroundColor = .red
             checkButton.setTitle("Try againe", for: .normal)
         }
     }
+    
+    private func firstAlert(attempt: Int) {
+        if attempt == dataSource.count + 1 {
+            self.attempt -= 1
+            let allert = UIAlertController(title: "You've finished!", message: "Your score: \(score)", preferredStyle: .alert)
+            let action = UIAlertAction(title: "Try againe", style: .default) { _ in
+                self.navigationController?.popViewController(animated: true)
+            }
+            allert.addAction(action)
+            present(allert, animated: true)
+        }
+    }
+    
     private func checkAnswer() -> Bool {
         pastTextField.text?.lowercased() == currnetVerb?.pastSimple.lowercased() &&
         participleTextField.text?.lowercased() == currnetVerb?.participle.lowercased()
@@ -172,7 +209,7 @@ final class TraineViewController: UIViewController {
         
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
-        contentView.addSubviews(views: [infinitiveLabel, attemptLable, scoreLabel, pastSimpleLabel, participleLabel, pastTextField, participleTextField, checkButton])
+        contentView.addSubviews(views: [infinitiveLabel, attemptLable, scoreLabel, pastSimpleLabel, participleLabel, pastTextField, participleTextField, checkButton, skipButton])
         
         setupConstraints()
     }
@@ -212,6 +249,10 @@ final class TraineViewController: UIViewController {
         
         checkButton.snp.makeConstraints { make in
             make.top.equalTo(participleTextField.snp.bottom).offset(50)
+            make.leading.trailing.equalToSuperview().inset(edgeInsets)
+        }
+        skipButton.snp.makeConstraints { make in
+            make.top.equalTo(participleTextField.snp.bottom).offset(100)
             make.leading.trailing.equalToSuperview().inset(edgeInsets)
         }
     }
