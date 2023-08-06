@@ -26,7 +26,7 @@ final class TableViewCell: UITableViewCell {
     private lazy var checkboxImageView: UIImageView = {
         let view = UIImageView()
         
-        view.image = State.unselected.image
+        view.image = State.selected.image
         view.contentMode = .center
         
         return view

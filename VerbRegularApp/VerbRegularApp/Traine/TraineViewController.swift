@@ -145,6 +145,18 @@ final class TraineViewController: UIViewController {
             count += 1
             attempt += 1
             score += 1
+            checkButton.backgroundColor = .systemGray5
+            checkButton.setTitle("Check", for: .normal)
+            
+            if attempt == dataSource.count + 1 {
+                self.attempt -= 1
+                let allert = UIAlertController(title: "You've finished!", message: "Your score: \(score)", preferredStyle: .alert)
+                let action = UIAlertAction(title: "Try againe", style: .default) { _ in
+                    self.navigationController?.popViewController(animated: true)
+                }
+                allert.addAction(action)
+                present(allert, animated: true)
+            }
         } else {
             checkButton.backgroundColor = .red
             checkButton.setTitle("Try againe", for: .normal)
